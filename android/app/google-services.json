@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "970517156207",
+    "firebase_url": "https://flutter---translator.firebaseio.com",
+    "project_id": "flutter---translator",
+    "storage_bucket": "flutter---translator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970517156207:android:46603fdc6081f93c52189a",
+        "android_client_info": {
+          "package_name": "com.example.translator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970517156207-b184ijoi6t55l834j2s86g9ldv5deet6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1MqG6_NeQcI4Bd77EqDODYd1mrrtIrII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970517156207-b184ijoi6t55l834j2s86g9ldv5deet6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
