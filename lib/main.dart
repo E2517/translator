@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _pushNotifications.initNotifications();
       _pushNotifications.messages.listen((data) {
-        print('Data from Firebase $data');
         SharedPref().saveFirebaseData(data);
       });
     });
