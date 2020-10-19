@@ -1,10 +1,10 @@
 # [![Flutter logo][]][flutter.dev]
 
-A Flutter mobile app to emulate iOS Translator
+A Flutter mobile app to emulate iOS Translator with Push Notifications (Firebase) and CI/CD
 
 ## e2517
 
-![ios][] 
+![ios][]
 ![flutter image][]
 
 [flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup.png
