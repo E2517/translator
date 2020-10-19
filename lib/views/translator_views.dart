@@ -12,7 +12,7 @@ class _TranslatorState extends State<Translator> {
   @override
   Widget build(BuildContext context) {
     Future<Null> _refresh() async {
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(Duration(seconds: 1));
       setState(() {
         ViewTranslator();
       });
@@ -64,10 +64,6 @@ class _TranslatorState extends State<Translator> {
         },
       ),
     );
-  }
-
-  Future<dynamic> onRefresh() async {
-    await Future.delayed(Duration(seconds: 1));
   }
 }
 
