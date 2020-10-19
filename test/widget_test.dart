@@ -14,12 +14,6 @@ void main() {
 
     expect(find.text('Russian'), findsNothing);
 
-    // Verify that you have enter text.
-    expect(find.text('Enter text'), findsOneWidget);
-
-    // Verify that you do not have Introduce texto.
-    expect(find.text('Introduce texto'), findsNothing);
-
     // Verify that you have Icon with a mic
     tester.tap(find.widgetWithIcon(FloatingActionButton, Icons.mic));
   });
