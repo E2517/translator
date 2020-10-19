@@ -12,6 +12,7 @@ void main() {
     expect(find.text('English'), findsOneWidget);
     expect(find.text('UK'), findsOneWidget);
 
+    // Not expected
     expect(find.text('Russian'), findsNothing);
 
     // Verify that you have Icon with a mic
