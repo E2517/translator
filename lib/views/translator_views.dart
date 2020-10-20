@@ -34,6 +34,7 @@ class _TranslatorState extends State<Translator> {
           ),
           onPressed: () {
             SharedPref().removeFirebaseData('firebase');
+            _refresh();
           },
         ),
       ),
@@ -145,7 +146,7 @@ class ViewTranslator extends StatelessWidget {
                           style: TextStyle(fontSize: 24.0),
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: snapshot.data != null
+                              hintText: snapshot.hasData
                                   ? snapshot.data
                                   : 'Enter text'),
                         );
