@@ -29,6 +29,7 @@ class PushNotifications {
         dynamic data;
 
         data = message['data']['text'] ?? 'no-data';
+
         _messagesController.sink.add(data);
       },
       onResume: (Map<String, dynamic> message) async {
@@ -37,6 +38,7 @@ class PushNotifications {
         dynamic data;
 
         data = message['data']['text'] ?? 'no-data';
+
         _messagesController.sink.add(data);
       },
     );
