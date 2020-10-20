@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:translator/main.dart';
 
@@ -14,8 +13,5 @@ void main() {
 
     // Not expected
     expect(find.text('Russian'), findsNothing);
-
-    // Verify that you have Icon with a mic
-    tester.tap(find.widgetWithIcon(FloatingActionButton, Icons.mic));
   });
 }
