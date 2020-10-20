@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:translator/firebase/push_notifications_firebase.dart';
 import 'package:translator/preferences/shared_preferences.dart';
+import 'package:translator/views/favourites.views.dart';
 import 'package:translator/views/translator_views.dart';
 
 void main() => runApp(MyApp());
@@ -34,6 +35,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: 'home',
       routes: {
         'home': (BuildContext context) => Translator(),
+        'favourites': (BuildContext context) => Favourites(),
       },
       onUnknownRoute: (RouteSettings settings) {
         print('Not founded route: ${settings.name}');

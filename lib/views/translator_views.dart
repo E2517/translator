@@ -58,8 +58,9 @@ class _TranslatorState extends State<Translator> {
               Navigator.of(context)
                   .pushNamedAndRemoveUntil('home', (route) => false);
             } else if (index == 1) {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil('everis', (route) => true);
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  'favourites', (route) => true,
+                  arguments: SharedPref().getFirebaseData('firebase'));
             }
           });
         },
