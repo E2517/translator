@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:translator/utils/bottom_utils.dart';
+import 'package:provider/provider.dart';
+import 'package:translator/models/translate_models.dart';
+import 'package:translator/widgets/bottom_utils.dart';
 
 class Favourites extends StatefulWidget {
   @override
@@ -9,35 +11,33 @@ class Favourites extends StatefulWidget {
 class _FavouritesState extends State<Favourites> {
   @override
   Widget build(BuildContext context) {
-    final data = ModalRoute.of(context).settings.arguments;
+    // final data = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Favourites'),
           centerTitle: true,
         ),
-        body: Center(
-          child: Container(
-            child: FutureBuilder(
-              future: data,
+        body: Consumer<TranslateModel>(
+          builder: (context, translate, child) {
+            return FutureBuilder(
+              future: translate.dataFirebase,
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
                   return Center(child: CircularProgressIndicator());
                 }
-                return Text(snapshot.data);
+                return Center(child: Text(snapshot.data));
               },
-            ),
-          ),
+            );
+          },
         ),
         bottomNavigationBar: CustomBottomNavigationBar(
-          currentIndex: 1,
+          currentIndex: 2,
           onTap: (index) {
             setState(() {
               if (index == 0) {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('home', (route) => false);
-              } else if (index == 1) {
-                Navigator.of(context)
-                    .pushNamedAndRemoveUntil('favourites', (route) => true);
               }
             });
           },

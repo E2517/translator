@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:translator/preferences/shared_preferences.dart';
-import 'package:translator/utils/bottom_utils.dart';
+import 'package:translator/widgets/bottom_utils.dart';
 
 class Translator extends StatefulWidget {
   @override
@@ -32,8 +32,7 @@ class _TranslatorState extends State<Translator> {
               size: 40.0,
             ),
             onPressed: () {
-              SharedPref().removeFirebaseData('firebase');
-              _refresh();
+              Navigator.pushNamed(context, 'favourites');
             },
           ),
         ),
@@ -45,6 +44,9 @@ class _TranslatorState extends State<Translator> {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('home', (route) => false);
               } else if (index == 1) {
+                SharedPref().removeFirebaseData('firebase');
+                _refresh();
+              } else {
                 Navigator.of(context).pushNamedAndRemoveUntil(
                     'favourites', (route) => true,
                     arguments: SharedPref().getFirebaseData('firebase'));
