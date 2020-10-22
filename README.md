@@ -2,6 +2,24 @@
 
 A Flutter mobile app to emulate iOS Translator with Push Notifications (Firebase), Shared Preferences, ChangeNotifier to manage the state, Futures and CI/CD
 
+## Flutter commnads
+
+'''
+flutter create new project
+'''
+
+'''
+flutter test
+'''
+
+'''
+flutter build apk
+'''
+
+'''
+flutter build appbundle
+'''
+
 ## e2517
 
 ![ios][]
