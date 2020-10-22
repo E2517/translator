@@ -1,6 +1,6 @@
 # [![Flutter logo][]][flutter.dev]
 
-A Flutter mobile app to emulate iOS Translator with Push Notifications (Firebase) and CI/CD
+A Flutter mobile app to emulate iOS Translator with Push Notifications (Firebase), Shared Preferences, ChangeNotifier to manage the state, Futures and CI/CD
 
 ## e2517
 
