@@ -4,21 +4,29 @@ A Flutter mobile app to emulate iOS Translator with Push Notifications (Firebase
 
 ## Flutter commnads
 
-'''
-flutter create new project
-'''
+```python
+flutter upgrade
+```
 
-'''
-flutter test
-'''
+```python
+flutter channels
+```
 
-'''
+```python
+flutter pub get
+```
+
+```python
+flutter run
+```
+
+```python
 flutter build apk
-'''
+```
 
-'''
+```python
 flutter build appbundle
-'''
+```
 
 ## e2517
 
