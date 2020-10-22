@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:translator/models/translate_models.dart';
-import 'package:translator/widgets/bottom_utils.dart';
+import 'package:translator/widgets/bottom_widgets.dart';
 
 class Favourites extends StatefulWidget {
   @override
