@@ -1,0 +1,20 @@
+import 'package:flutter/foundation.dart';
+import 'package:translator/firebase/push_notifications_firebase.dart';
+import 'package:translator/preferences/shared_preferences.dart';
+
+class TranslateModel extends ChangeNotifier {
+  TranslateModel({
+    this.data,
+  });
+
+  String data;
+
+  Future get dataFirebase {
+    final _pushNotifications = new PushNotifications();
+    _pushNotifications.messages.listen((event) {
+      SharedPref().saveFirebaseData(event);
+      notifyListeners();
+    });
+    return SharedPref().getFirebaseData('firebase');
+  }
+}
