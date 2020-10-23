@@ -12,7 +12,6 @@ class TranslateModel extends ChangeNotifier {
   Future get dataFirebase {
     final _pushNotifications = new PushNotifications();
     _pushNotifications.messages.listen((event) {
-      SharedPref().saveFirebaseData(event);
       notifyListeners();
     });
     return SharedPref().getFirebaseData('firebase');
