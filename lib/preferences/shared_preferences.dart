@@ -1,18 +1,16 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPref {
-  Future saveFirebaseData(value) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString('firebase', value);
+  static SharedPreferences _prefs;
+
+  static Future<SharedPreferences> init() async {
+    _prefs = await SharedPreferences.getInstance();
+    return _prefs;
   }
 
-  Future<String> getFirebaseData(String key) async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(key);
-  }
+  Future saveFirebaseData(value) async => _prefs.setString('firebase', value);
 
-  Future removeFirebaseData(String key) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.remove(key);
-  }
+  Future<String> getFirebaseData(String key) async => _prefs.getString(key);
+
+  Future removeFirebaseData(String key) async => _prefs.remove(key);
 }
