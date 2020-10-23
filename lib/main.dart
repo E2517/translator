@@ -19,6 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    SharedPref.init();
 
     setState(() {
       _pushNotifications.initNotifications();
