@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       create: (context) => TranslateModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Translator',
+        title: 'Translate',
         theme: ThemeData.dark(),
         initialRoute: 'home',
         routes: {
