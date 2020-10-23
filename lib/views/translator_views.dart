@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:translator/preferences/shared_preferences.dart';
-import 'package:translator/widgets/body_widgets.dart';
+import 'package:translator/widgets/translator/body_widgets.dart';
 import 'package:translator/widgets/bottom_widgets.dart';
-import 'package:translator/widgets/header_widget.dart';
+import 'package:translator/widgets/translator/header_widget.dart';
 
 class Translator extends StatefulWidget {
   @override
