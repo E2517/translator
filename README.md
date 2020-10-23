@@ -31,12 +31,16 @@ flutter build appbundle
 ## e2517
 
 ![android one][]
+![android two][]
+![android three][]
 ![flutter][]
 ![flutter image][]
 
 [flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup.png
 [flutter.dev]: https://flutter.dev
 [dart platform diagram]: https://github.com/flutter/website/blob/master/src/images/homepage/dart-diagram-small.png
-[android one]: http://achoweb.es/wp-content/uploads/2020/10/Capture.png
+[android one]: http://achoweb.es/wp-content/uploads/2020/10/Capture-1.png
+[android two]: http://achoweb.es/wp-content/uploads/2020/10/Capture-2.png
+[android three]: http://achoweb.es/wp-content/uploads/2020/10/Capture.png
 [flutter image]: http://achoweb.es/wp-content/uploads/2020/10/Translator.png
 [flutter]: http://achoweb.es/wp-content/uploads/2020/10/FlutterTranslate.png
