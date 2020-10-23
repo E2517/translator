@@ -40,7 +40,7 @@ flutter build appbundle
 [flutter.dev]: https://flutter.dev
 [dart platform diagram]: https://github.com/flutter/website/blob/master/src/images/homepage/dart-diagram-small.png
 [android one]: http://achoweb.es/wp-content/uploads/2020/10/Capture-1.png
-[android two]: http://achoweb.es/wp-content/uploads/2020/10/Capture-2.png
+[android two]: http://achoweb.es/wp-content/uploads/2020/10/flutter.png
 [android three]: http://achoweb.es/wp-content/uploads/2020/10/Capture.png
 [flutter image]: http://achoweb.es/wp-content/uploads/2020/10/Translator.png
 [flutter]: http://achoweb.es/wp-content/uploads/2020/10/FlutterTranslate.png
