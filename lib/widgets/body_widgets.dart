@@ -75,9 +75,7 @@ class Body extends StatelessWidget {
                           style: TextStyle(fontSize: 24.0),
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: snapshot.hasData
-                                  ? snapshot.data
-                                  : 'Enter text'),
+                              hintText: snapshot.data ?? 'Enter text'),
                         );
                       }
                     })),
