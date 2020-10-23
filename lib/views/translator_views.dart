@@ -51,7 +51,7 @@ class _TranslatorState extends State<Translator> {
               } else if (index == 1) {
                 SharedPref().removeFirebaseData('firebase');
                 _refresh();
-              } else {
+              } else if (index == 2) {
                 Navigator.of(context).pushNamedAndRemoveUntil(
                     'favourites', (route) => true,
                     arguments: SharedPref().getFirebaseData('firebase'));
