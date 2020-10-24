@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:translator/firebase/push_notifications_firebase.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/preferences/shared_preferences.dart';
-import 'package:translator/views/favourites.views.dart';
+import 'package:translator/views/favourites_views.dart';
 import 'package:translator/views/translator_views.dart';
 
 void main() => runApp(MyApp());
