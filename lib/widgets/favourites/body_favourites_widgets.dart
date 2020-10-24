@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Body extends StatelessWidget {
-  const Body({Key key, @required this.snapshot}) : super(key: key);
+class BodyFavourites extends StatelessWidget {
+  const BodyFavourites({Key key, @required this.snapshot}) : super(key: key);
   final AsyncSnapshot snapshot;
   @override
   Widget build(BuildContext context) {

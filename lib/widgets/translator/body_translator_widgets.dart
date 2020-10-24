@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 
-class Body extends StatelessWidget {
-  Body({Key key}) : super(key: key);
+class BodyTranslator extends StatelessWidget {
+  BodyTranslator({Key key}) : super(key: key);
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(

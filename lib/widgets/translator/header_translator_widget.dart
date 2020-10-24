@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HeaderLanguages extends StatelessWidget {
-  const HeaderLanguages({
+class HeaderTranslator extends StatelessWidget {
+  const HeaderTranslator({
     Key key,
   }) : super(key: key);
 

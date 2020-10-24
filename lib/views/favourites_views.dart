@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/widgets/bottom_widgets.dart';
-import 'package:translator/widgets/favourites/body_favourites.dart';
+import 'package:translator/widgets/favourites/body_favourites_widgets.dart';
 
 class Favourites extends StatefulWidget {
   @override
@@ -44,7 +44,7 @@ class _FavouritesState extends State<Favourites> {
                   ));
                 }
 
-                return Body(
+                return BodyFavourites(
                   snapshot: snapshot,
                 );
               },
