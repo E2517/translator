@@ -52,7 +52,7 @@ class _FavouritesState extends State<Favourites> {
           },
         ),
         bottomNavigationBar: CustomBottomNavigationBar(
-          currentIndex: 1,
+          currentIndex: 2,
           onTap: (index) {
             setState(() {
               if (index == 0) {
