@@ -58,6 +58,9 @@ class _FavouritesState extends State<Favourites> {
               if (index == 0) {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('home', (route) => false);
+              } else if (index == 2) {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('info', (route) => false);
               }
             });
           },
