@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BodyFavourites extends StatelessWidget {
-  const BodyFavourites({Key key, @required this.snapshot}) : super(key: key);
   final AsyncSnapshot snapshot;
+  const BodyFavourites({Key key, @required this.snapshot}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

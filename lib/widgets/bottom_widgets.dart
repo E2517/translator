@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomBottomNavigationBar extends BottomNavigationBar {
   CustomBottomNavigationBar(
       {Key key,
-      int currentIndex,
+      @required int currentIndex,
       String labelOne,
       String labelTwo,
       Function(int index) onTap})
