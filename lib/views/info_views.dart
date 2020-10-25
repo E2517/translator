@@ -1,8 +1,20 @@
 // import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mapbox_gl/mapbox_gl.dart';
 
-class Info extends StatelessWidget {
+class Info extends StatefulWidget {
+  @override
+  _InfoState createState() => _InfoState();
+}
+
+class _InfoState extends State<Info> {
+  MapboxMapController controller;
+
+  void _onMapCreated(MapboxMapController controller) {
+    this.controller = controller;
+  }
+
   @override
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
@@ -54,7 +66,19 @@ class Info extends StatelessWidget {
                           style: TextStyle(fontSize: 24.0),
                           textAlign: TextAlign.center),
                     )
-                  : Center(child: CircularProgressIndicator()),
+                  : Center(
+                      child: MapboxMap(
+                        accessToken:
+                            'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',
+                        onMapCreated: _onMapCreated,
+                        styleString:
+                            'mapbox://styles/congomap/ckgowxofl1vbq19odmykhkzhs',
+                        initialCameraPosition: const CameraPosition(
+                          target: LatLng(51.50853, -0.12574),
+                          zoom: 10.0,
+                        ),
+                      ),
+                    ),
             ),
           ),
         ],
