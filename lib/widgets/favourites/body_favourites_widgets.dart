@@ -63,7 +63,7 @@ class BodyFavourites extends StatelessWidget {
                           ),
                           SizedBox(height: 10.0),
                           Text(
-                            snapshot.data,
+                            'Google Translate API',
                             style: TextStyle(
                                 fontSize: 30.0,
                                 color: Color.fromRGBO(106, 197, 220, 1)),
