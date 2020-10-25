@@ -48,3 +48,5 @@ flutter build appbundle
 [flutter image]: http://achoweb.es/wp-content/uploads/2020/10/Translator.png
 [map]: http://achoweb.es/wp-content/uploads/2020/10/map.png
 [flutter]: http://achoweb.es/wp-content/uploads/2020/10/FlutterTranslate.png
+
+* Upgrade the minimum SDK Version to 20 in Andorid and iOS to use MapBox 
