@@ -30,6 +30,7 @@ dependencies:
   firebase_messaging:
   shared_preferences:
   provider:
+  mapbox_gl:
 
 dev_dependencies:
   flutter_test:
