@@ -62,7 +62,7 @@ class _FavouritesState extends State<Favourites> {
                     .pushNamedAndRemoveUntil('home', (route) => false);
               } else if (index == 2) {
                 Navigator.of(context)
-                    .pushNamedAndRemoveUntil('info', (route) => false);
+                    .pushNamedAndRemoveUntil('map', (route) => false);
               }
             });
           },
