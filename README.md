@@ -38,8 +38,8 @@ flutter build appbundle
 
 ![flutter][]
 ![flutter image][]
-![map][]
 ![android][]
+![map][]
 
 [flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup.png
 [flutter.dev]: https://flutter.dev
