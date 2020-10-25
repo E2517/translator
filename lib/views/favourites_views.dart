@@ -53,6 +53,8 @@ class _FavouritesState extends State<Favourites> {
         ),
         bottomNavigationBar: CustomBottomNavigationBar(
           currentIndex: 2,
+          labelThree: 'Map',
+          iconThree: Icon(Icons.zoom_out_map),
           onTap: (index) {
             setState(() {
               if (index == 0) {

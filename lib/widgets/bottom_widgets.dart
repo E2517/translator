@@ -5,7 +5,8 @@ class CustomBottomNavigationBar extends BottomNavigationBar {
       {Key key,
       @required int currentIndex,
       String labelOne,
-      String labelTwo,
+      String labelThree,
+      Icon iconThree,
       Function(int index) onTap})
       : super(
             key: key,
@@ -18,7 +19,8 @@ class CustomBottomNavigationBar extends BottomNavigationBar {
               BottomNavigationBarItem(
                   label: 'Remove', icon: Icon(Icons.delete_outline)),
               BottomNavigationBarItem(
-                  label: labelTwo ?? 'Favourites', icon: Icon(Icons.star_rate)),
+                  label: labelThree ?? 'Favourites',
+                  icon: iconThree ?? Icon(Icons.star_rate)),
             ],
             onTap: onTap);
 }
