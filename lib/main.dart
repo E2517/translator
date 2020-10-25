@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
       _pushNotifications.initNotifications();
       _pushNotifications.messages.listen((data) {
         SharedPref().saveFirebaseData(data);
-        navigatorKey.currentState.pushNamed('info', arguments: data);
+        navigatorKey.currentState.pushNamed('map', arguments: data);
       });
     });
   }
