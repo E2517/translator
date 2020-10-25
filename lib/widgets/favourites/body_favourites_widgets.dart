@@ -14,7 +14,7 @@ class BodyFavourites extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: Text(
-              'Spanish - English',
+              'English - Spanish',
               textAlign: TextAlign.end,
               style: TextStyle(fontSize: 35.0, fontWeight: FontWeight.bold),
             ),
@@ -38,8 +38,10 @@ class BodyFavourites extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Spanish',
-                            style: TextStyle(fontSize: 24.0),
+                            'English(UK)',
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Color.fromRGBO(106, 197, 220, 1)),
                           ),
                           SizedBox(height: 10.0),
                           Text(
@@ -56,10 +58,8 @@ class BodyFavourites extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'English(UK)',
-                            style: TextStyle(
-                                fontSize: 24.0,
-                                color: Color.fromRGBO(106, 197, 220, 1)),
+                            'Spanish',
+                            style: TextStyle(fontSize: 24.0),
                           ),
                           SizedBox(height: 10.0),
                           Text(
