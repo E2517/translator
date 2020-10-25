@@ -1,4 +1,4 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
 
@@ -7,8 +7,8 @@ class Info extends StatelessWidget {
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
-    Timer(Duration(seconds: 10),
-        () => Navigator.pushReplacementNamed(context, 'home'));
+    // Timer(Duration(seconds: 10),
+    //     () => Navigator.pushReplacementNamed(context, 'home'));
     return Scaffold(
       appBar: AppBar(
         title: Text('Data'),
@@ -23,7 +23,9 @@ class Info extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0)),
               child: ListTile(
-                leading: Image(image: AssetImage('assets/images/icon.png')),
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/skater.jpg'),
+                ),
                 title: Text(
                   'Full Stack Developer',
                   style: TextStyle(color: Colors.black),
