@@ -19,7 +19,7 @@ class _MapState extends State<Map> {
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
-    Timer(Duration(seconds: 30),
+    Timer(Duration(seconds: 15),
         () => Navigator.pushReplacementNamed(context, 'home'));
 
     return Scaffold(
