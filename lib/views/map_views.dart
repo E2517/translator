@@ -29,16 +29,10 @@ class _MapState extends State<Map> {
       ),
       body: Stack(
         children: [
-          HeaderInfo(),
           Expanded(
             child: Container(
               child: dataPushNotifications != null
-                  ? Center(
-                      child: Text(
-                          'You have a new notification: $dataPushNotifications',
-                          style: TextStyle(fontSize: 24.0),
-                          textAlign: TextAlign.center),
-                    )
+                  ? HeaderInfo(text: dataPushNotifications)
                   : MapboxMap(
                       accessToken:
                           'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',

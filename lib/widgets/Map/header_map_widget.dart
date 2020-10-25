@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HeaderInfo extends StatelessWidget {
-  const HeaderInfo({
-    Key key,
-  }) : super(key: key);
+  final String text;
+  const HeaderInfo({Key key, @required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class HeaderInfo extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           subtitle: Text(
-            'everis an NTT Data Company',
+            text,
             style: TextStyle(color: Colors.black),
           ),
           trailing: Icon(
