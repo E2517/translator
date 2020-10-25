@@ -4,7 +4,7 @@ import 'package:translator/firebase/push_notifications_firebase.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/views/favourites_views.dart';
-import 'package:translator/views/info_views.dart';
+import 'package:translator/views/map_views.dart';
 import 'package:translator/views/translator_views.dart';
 
 void main() => runApp(MyApp());
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
         routes: {
           'home': (BuildContext context) => Translator(),
           'favourites': (BuildContext context) => Favourites(),
-          'info': (BuildContext context) => Info(),
+          'map': (BuildContext context) => Map(),
         },
         onUnknownRoute: (RouteSettings settings) {
           print('Not founded route: ${settings.name}');
