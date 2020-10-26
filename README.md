@@ -35,18 +35,20 @@ flutter build appbundle
 
 ## e2517
 
-
 ![flutter][]
-![flutter image][]
-![android][]
 ![map][]
+
+## GitHub Actions (CI/CD): Testing and Release APK for Android
+
+![github][]
+
+
 
 [flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup.png
 [flutter.dev]: https://flutter.dev
 [dart platform diagram]: https://github.com/flutter/website/blob/master/src/images/homepage/dart-diagram-small.png
-[android]: http://achoweb.es/wp-content/uploads/2020/10/translate.png
-[flutter image]: http://achoweb.es/wp-content/uploads/2020/10/Translator.png
-[map]: http://achoweb.es/wp-content/uploads/2020/10/map.png
-[flutter]: http://achoweb.es/wp-content/uploads/2020/10/FlutterTranslate.png
+[flutter]: http://achoweb.es/wp-content/uploads/2020/10/translator-1.png
+[map]: http://achoweb.es/wp-content/uploads/2020/10/Maps.png
+[github]: http://achoweb.es/wp-content/uploads/2020/10/githubactions.png
 
 * Upgrade the minimum SDK Version to 20 in Android and iOS to use MapBox 
