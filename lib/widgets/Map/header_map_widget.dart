@@ -24,7 +24,7 @@ class HeaderInfo extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           trailing: Icon(
-            Icons.laptop,
+            Icons.message_rounded,
             color: Colors.black,
           ),
           onTap: () {
