@@ -26,6 +26,15 @@ class _MapState extends State<Map> {
       appBar: AppBar(
         title: Text('Map'),
         centerTitle: true,
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushNamed(context, 'home');
+            }),
+        actions: [
+          IconButton(icon: Icon(Icons.add), onPressed: () {}),
+          IconButton(icon: Icon(Icons.remove), onPressed: () {}),
+        ],
       ),
       body: Stack(
         children: [
@@ -47,6 +56,15 @@ class _MapState extends State<Map> {
             ),
           ),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 15.0),
+        child: FloatingActionButton(
+          backgroundColor: Color.fromRGBO(106, 197, 220, 1),
+          child: Icon(Icons.person_pin),
+          onPressed: () {},
+        ),
       ),
     );
   }
