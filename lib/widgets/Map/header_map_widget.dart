@@ -13,7 +13,7 @@ class HeaderInfo extends StatelessWidget {
             color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
         child: ListTile(
           leading: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/skater.jpg'),
+            backgroundImage: AssetImage('assets/images/skater.png'),
           ),
           title: Text(
             'Full Stack Developer',

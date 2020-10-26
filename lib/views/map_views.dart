@@ -1,6 +1,9 @@
-// import 'dart:async';
+import 'dart:async';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/widgets/Map/header_map_widget.dart';
 
 class Map extends StatefulWidget {
@@ -15,12 +18,22 @@ class _MapState extends State<Map> {
     this.controller = controller;
   }
 
+  void _onStyleLoaded() {
+    addImageFromAssets("carlos", "assets/images/skater.png");
+  }
+
+  Future<void> addImageFromAssets(String name, String assetName) async {
+    final ByteData bytes = await rootBundle.load(assetName);
+    final Uint8List list = bytes.buffer.asUint8List();
+    return controller.addImage(name, list);
+  }
+
   @override
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
-    // Timer(Duration(seconds: 15),
-    //     () => Navigator.pushReplacementNamed(context, 'home'));
+    Timer(Duration(seconds: 10),
+        () => Navigator.pushReplacementNamed(context, 'map'));
 
     return Scaffold(
       appBar: AppBar(
@@ -54,6 +67,7 @@ class _MapState extends State<Map> {
                       accessToken:
                           'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',
                       onMapCreated: _onMapCreated,
+                      onStyleLoadedCallback: _onStyleLoaded,
                       styleString:
                           'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n',
                       initialCameraPosition: const CameraPosition(
@@ -67,13 +81,27 @@ class _MapState extends State<Map> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 15.0),
-        child: FloatingActionButton(
-          backgroundColor: Color.fromRGBO(106, 197, 220, 1),
-          child: Icon(Icons.person_pin),
-          onPressed: () {},
-        ),
-      ),
+          padding: const EdgeInsets.only(bottom: 15.0),
+          child: FutureBuilder(
+              future: SharedPref().getFirebaseData('firebase'),
+              builder: (context, snapshot) {
+                return FloatingActionButton(
+                  backgroundColor: Color.fromRGBO(106, 197, 220, 1),
+                  child: Icon(Icons.person_pin),
+                  onPressed: () {
+                    controller.addSymbol(
+                      SymbolOptions(
+                          geometry: LatLng(51.515419, -0.141099),
+                          iconSize: 0.5,
+                          iconImage: 'carlos',
+                          textField: snapshot.data,
+                          textColor: '#6AC5DC',
+                          textMaxWidth: 50.0,
+                          textOffset: Offset(0, 3)),
+                    );
+                  },
+                );
+              })),
     );
   }
 }
