@@ -32,8 +32,10 @@ class _MapState extends State<Map> {
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
-    Timer(Duration(seconds: 10),
-        () => Navigator.pushReplacementNamed(context, 'map'));
+    if (dataPushNotifications != null) {
+      Timer(Duration(seconds: 10),
+          () => Navigator.pushReplacementNamed(context, 'map'));
+    }
 
     return Scaffold(
       appBar: AppBar(
