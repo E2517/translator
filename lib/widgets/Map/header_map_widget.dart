@@ -16,7 +16,7 @@ class HeaderInfo extends StatelessWidget {
             backgroundImage: AssetImage('assets/images/skater.png'),
           ),
           title: Text(
-            'Full Stack Developer',
+            'Carlos',
             style: TextStyle(color: Colors.black),
           ),
           subtitle: Text(
