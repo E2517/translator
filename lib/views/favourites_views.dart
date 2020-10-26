@@ -12,8 +12,6 @@ class Favourites extends StatefulWidget {
 class _FavouritesState extends State<Favourites> {
   @override
   Widget build(BuildContext context) {
-    // final data = ModalRoute.of(context).settings.arguments;
-
     return Scaffold(
         appBar: AppBar(
           title: Text('Favourites'),
