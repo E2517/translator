@@ -61,23 +61,21 @@ class _MapState extends State<Map> {
       ),
       body: Stack(
         children: [
-          Expanded(
-            child: Container(
-              child: dataPushNotifications != null
-                  ? HeaderInfo(text: dataPushNotifications)
-                  : MapboxMap(
-                      accessToken:
-                          'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',
-                      onMapCreated: _onMapCreated,
-                      onStyleLoadedCallback: _onStyleLoaded,
-                      styleString:
-                          'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n',
-                      initialCameraPosition: const CameraPosition(
-                        target: LatLng(51.50853, -0.12574),
-                        zoom: 11.0,
-                      ),
+          Container(
+            child: dataPushNotifications != null
+                ? HeaderInfo(text: dataPushNotifications)
+                : MapboxMap(
+                    accessToken:
+                        'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',
+                    onMapCreated: _onMapCreated,
+                    onStyleLoadedCallback: _onStyleLoaded,
+                    styleString:
+                        'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n',
+                    initialCameraPosition: const CameraPosition(
+                      target: LatLng(51.50853, -0.12574),
+                      zoom: 11.0,
                     ),
-            ),
+                  ),
           ),
         ],
       ),
