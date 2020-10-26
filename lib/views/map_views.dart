@@ -1,4 +1,4 @@
-import 'dart:async';
+// import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:translator/widgets/Map/header_map_widget.dart';
@@ -19,8 +19,8 @@ class _MapState extends State<Map> {
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
-    Timer(Duration(seconds: 15),
-        () => Navigator.pushReplacementNamed(context, 'home'));
+    // Timer(Duration(seconds: 15),
+    //     () => Navigator.pushReplacementNamed(context, 'home'));
 
     return Scaffold(
       appBar: AppBar(
@@ -32,8 +32,16 @@ class _MapState extends State<Map> {
               Navigator.pushNamed(context, 'home');
             }),
         actions: [
-          IconButton(icon: Icon(Icons.add), onPressed: () {}),
-          IconButton(icon: Icon(Icons.remove), onPressed: () {}),
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                controller.moveCamera(CameraUpdate.zoomIn());
+              }),
+          IconButton(
+              icon: Icon(Icons.remove),
+              onPressed: () {
+                controller.moveCamera(CameraUpdate.zoomOut());
+              }),
         ],
       ),
       body: Stack(
