@@ -40,7 +40,7 @@ flutter build appbundle
 
 ## GitHub Actions (CI/CD): Testing and Release APK for Android
 
-![flutter][]
+![github][]
 
 
 
