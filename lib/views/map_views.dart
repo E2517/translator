@@ -92,7 +92,7 @@ class _MapState extends State<Map> {
                     controller.addSymbol(
                       SymbolOptions(
                           geometry: LatLng(51.515419, -0.141099),
-                          iconSize: 0.5,
+                          iconSize: 0.4,
                           iconImage: 'carlos',
                           textField: snapshot.data,
                           textColor: '#6AC5DC',
