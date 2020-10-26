@@ -36,7 +36,7 @@ class _FavouritesState extends State<Favourites> {
                       Text('No Favourites',
                           style: TextStyle(fontSize: 24.0, color: Colors.grey)),
                       SizedBox(height: 20.0),
-                      Text('Your Favourite translation will apperar here',
+                      Text('Your favourite translation will apperar here',
                           style: TextStyle(fontSize: 16.0, color: Colors.grey)),
                     ],
                   ));
@@ -51,16 +51,21 @@ class _FavouritesState extends State<Favourites> {
         ),
         bottomNavigationBar: CustomBottomNavigationBar(
           currentIndex: 2,
-          labelThree: 'Map',
-          iconThree: Icon(Icons.zoom_out_map),
+          labelTwo: 'Map',
+          iconTwo: Icon(Icons.zoom_out_map_sharp),
+          labelThree: 'Favourites',
+          iconThree: Icon(Icons.star_rate),
           onTap: (index) {
             setState(() {
               if (index == 0) {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('home', (route) => false);
-              } else if (index == 2) {
+              } else if (index == 1) {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('map', (route) => false);
+              } else if (index == 2) {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('favourites', (route) => false);
               }
             });
           },
