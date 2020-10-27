@@ -36,8 +36,7 @@ class _MapState extends State<Map> {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
     if (dataPushNotifications != null) {
-      Timer(Duration(seconds: 10),
-          () => Navigator.pushReplacementNamed(context, 'map'));
+      Timer(Duration(seconds: 10), () => Navigator.pushNamed(context, 'map'));
     }
 
     return Scaffold(
