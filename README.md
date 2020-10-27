@@ -21,7 +21,8 @@ flutter pub get
 ```
 
 ```
-flutter run
+flutter run --debug
+flutter run --release 
 ```
 
 ```
