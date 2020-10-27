@@ -4,20 +4,29 @@ A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern, B
 
 ## Flutter commnads
 
-```python
+```
+flutter doctor
+```
+
+```
 flutter upgrade
 ```
 
-```python
+```
 flutter channels
 ```
 
-```python
+```
 flutter pub get
 ```
 
-```python
+```
 flutter run
+```
+
+```
+flutter run --trace-startup --profile
+
 ```
 
 ```
@@ -25,11 +34,19 @@ flutter pub get
 flutter pub run flutter_launcher_icons:main
 ```
 
-```python
+A unit test tests a single function, method, or class.
+A widget test (in other UI frameworks referred to as component test) tests a single widget.
+An integration test tests a complete app or a large part of an app.
+
+```
+flutter test
+```
+
+```
 flutter build apk
 ```
 
-```python
+```
 flutter build appbundle
 ```
 
