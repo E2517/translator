@@ -14,7 +14,7 @@ class Map extends StatefulWidget {
 class _MapState extends State<Map> {
   String selectedStyle = 'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n';
   final dark = 'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n';
-  final clear = 'mapbox://styles/congomap/ckgrq1yf30dvd19p7eimi7a1z';
+  final blue = 'mapbox://styles/congomap/ckgs5h9mr01qb19o0jgztrbhm';
   MapboxMapController controller;
 
   void _onMapCreated(MapboxMapController controller) {
@@ -48,31 +48,6 @@ class _MapState extends State<Map> {
             onPressed: () {
               Navigator.pushNamed(context, 'home');
             }),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.cloud_circle_sharp,
-                color: Color.fromRGBO(106, 197, 220, 1)),
-            onPressed: () {
-              setState(() {
-                if (selectedStyle == dark) {
-                  selectedStyle = clear;
-                } else {
-                  selectedStyle = dark;
-                }
-              });
-            },
-          ),
-          IconButton(
-              icon: Icon(Icons.add, color: Color.fromRGBO(106, 197, 220, 1)),
-              onPressed: () {
-                controller.moveCamera(CameraUpdate.zoomIn());
-              }),
-          IconButton(
-              icon: Icon(Icons.remove, color: Color.fromRGBO(106, 197, 220, 1)),
-              onPressed: () {
-                controller.moveCamera(CameraUpdate.zoomOut());
-              }),
-        ],
       ),
       body: Stack(
         children: [
@@ -91,6 +66,41 @@ class _MapState extends State<Map> {
                     ),
                   ),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.cloud_circle_sharp,
+                        size: 30.0, color: Color.fromRGBO(106, 197, 220, 1)),
+                    onPressed: () {
+                      setState(() {
+                        if (selectedStyle == dark) {
+                          selectedStyle = blue;
+                        } else {
+                          selectedStyle = dark;
+                        }
+                      });
+                    },
+                  ),
+                  IconButton(
+                      icon: Icon(Icons.add,
+                          size: 30.0, color: Color.fromRGBO(106, 197, 220, 1)),
+                      onPressed: () {
+                        controller.moveCamera(CameraUpdate.zoomIn());
+                      }),
+                  IconButton(
+                      icon: Icon(Icons.remove,
+                          size: 30.0, color: Color.fromRGBO(106, 197, 220, 1)),
+                      onPressed: () {
+                        controller.moveCamera(CameraUpdate.zoomOut());
+                      }),
+                ],
+              ),
+            ],
+          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
