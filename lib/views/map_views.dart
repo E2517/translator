@@ -12,6 +12,9 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
+  String selectedStyle = 'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n';
+  final dark = 'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n';
+  final clear = 'mapbox://styles/congomap/ckgrq1yf30dvd19p7eimi7a1z';
   MapboxMapController controller;
 
   void _onMapCreated(MapboxMapController controller) {
@@ -48,12 +51,25 @@ class _MapState extends State<Map> {
             }),
         actions: [
           IconButton(
-              icon: Icon(Icons.add),
+            icon: Icon(Icons.cloud_circle_sharp,
+                color: Color.fromRGBO(106, 197, 220, 1)),
+            onPressed: () {
+              setState(() {
+                if (selectedStyle == dark) {
+                  selectedStyle = clear;
+                } else {
+                  selectedStyle = dark;
+                }
+              });
+            },
+          ),
+          IconButton(
+              icon: Icon(Icons.add, color: Color.fromRGBO(106, 197, 220, 1)),
               onPressed: () {
                 controller.moveCamera(CameraUpdate.zoomIn());
               }),
           IconButton(
-              icon: Icon(Icons.remove),
+              icon: Icon(Icons.remove, color: Color.fromRGBO(106, 197, 220, 1)),
               onPressed: () {
                 controller.moveCamera(CameraUpdate.zoomOut());
               }),
@@ -69,8 +85,7 @@ class _MapState extends State<Map> {
                         'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',
                     onMapCreated: _onMapCreated,
                     onStyleLoadedCallback: _onStyleLoaded,
-                    styleString:
-                        'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n',
+                    styleString: selectedStyle,
                     initialCameraPosition: const CameraPosition(
                       target: LatLng(51.50853, -0.12574),
                       zoom: 11.0,
