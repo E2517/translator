@@ -15,8 +15,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons:
-  firebase_messaging:
   shared_preferences:
+  firebase_messaging:
   provider:
   mapbox_gl:
 
@@ -30,7 +30,6 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/icon/icon_launcher.png"
-
 
 # The following section is specific to Flutter.
 flutter:
