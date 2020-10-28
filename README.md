@@ -13,7 +13,7 @@ flutter upgrade
 ```
 
 ```
-flutter channels
+flutter channel
 ```
 
 ```
@@ -22,7 +22,7 @@ flutter pub get
 
 ```
 flutter run --debug
-flutter run --release 
+flutter run --release
 ```
 
 ```
@@ -60,8 +60,6 @@ flutter build appbundle
 
 ![github][]
 
-
-
 [flutter logo]: https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup.png
 [flutter.dev]: https://flutter.dev
 [dart platform diagram]: https://github.com/flutter/website/blob/master/src/images/homepage/dart-diagram-small.png
@@ -69,4 +67,4 @@ flutter build appbundle
 [mapbox]: http://achoweb.es/wp-content/uploads/2020/10/mapboxgithub.png
 [github]: http://achoweb.es/wp-content/uploads/2020/10/githubactions.png
 
-* Upgrade the minimum SDK Version to 20 in Android and iOS to use MapBox 
+- Upgrade the minimum SDK Version to 20 in Android and iOS to use MapBox
