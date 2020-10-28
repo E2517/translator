@@ -58,6 +58,7 @@ flutter build appbundle
 ## e2517
 
 ![flutter][]
+
 ![mapbox][]
 
 ## GitHub Actions (CI/CD): Testing and Release APK for Android
