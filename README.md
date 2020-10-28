@@ -44,6 +44,10 @@ flutter test
 ```
 
 ```
+flutter clean
+```
+
+```
 flutter build apk
 ```
 
