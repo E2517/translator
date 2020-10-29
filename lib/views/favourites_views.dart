@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/widgets/bottom_widgets.dart';
 import 'package:translator/widgets/favourites/body_favourites_widgets.dart';
@@ -10,6 +11,7 @@ class Favourites extends StatefulWidget {
 }
 
 class _FavouritesState extends State<Favourites> {
+  SQLiteDatabase sqLiteDatabase;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +45,7 @@ class _FavouritesState extends State<Favourites> {
                 }
 
                 return BodyFavourites(
-                  snapshot: snapshot,
+                  sqLiteDatabase: sqLiteDatabase,
                 );
               },
             );

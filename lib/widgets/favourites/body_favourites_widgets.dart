@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:translator/database/sqlite_database.dart';
 
 class BodyFavourites extends StatelessWidget {
-  final AsyncSnapshot snapshot;
-  const BodyFavourites({Key key, @required this.snapshot}) : super(key: key);
+  final SQLiteDatabase sqLiteDatabase;
+  const BodyFavourites({Key key, @required this.sqLiteDatabase})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +46,15 @@ class BodyFavourites extends StatelessWidget {
                                 color: Color.fromRGBO(106, 197, 220, 1)),
                           ),
                           SizedBox(height: 10.0),
-                          Text(
-                            snapshot.data,
-                            style: TextStyle(fontSize: 30.0),
+                          FutureBuilder(
+                            future:
+                                sqLiteDatabase.getLanguagesEnglish('english'),
+                            builder: (context, snapshot) {
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(fontSize: 30.0),
+                              );
+                            },
                           )
                         ]),
                   ),
@@ -59,14 +67,20 @@ class BodyFavourites extends StatelessWidget {
                         children: [
                           Text(
                             'Spanish',
-                            style: TextStyle(fontSize: 24.0),
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Color.fromRGBO(106, 197, 220, 1)),
                           ),
                           SizedBox(height: 10.0),
-                          Text(
-                            'Google Translate API',
-                            style: TextStyle(
-                                fontSize: 30.0,
-                                color: Color.fromRGBO(106, 197, 220, 1)),
+                          FutureBuilder(
+                            future:
+                                sqLiteDatabase.getLanguagesEnglish('spanish'),
+                            builder: (context, snapshot) {
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(fontSize: 30.0),
+                              );
+                            },
                           )
                         ]),
                   ),

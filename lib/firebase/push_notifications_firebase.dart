@@ -27,9 +27,8 @@ class PushNotifications {
           english: english,
           spanish: spanish,
         );
+        await SQLiteDatabase.db.insertLanguage(data);
         _messagesController.sink.add(data);
-
-        SQLiteDatabase.db.insertLanguage(data);
       },
       onLaunch: (Map<String, dynamic> message) async {
         print("onLaunch: $message");

@@ -31,14 +31,14 @@ class SQLiteDatabase {
     final db = await database;
 
     final res = await db.rawInsert(
-        "INSERT Into Languages (id, english, spanish) "
+        "INSERT Into languages (id, english, spanish) "
         "VALUES ( ${language.id}, '${language.english}', '${language.spanish}' )");
     return res;
   }
 
   insertLanguage(Languages language) async {
     final db = await database;
-    final res = await db.insert('Languages', language.toJson());
+    final res = await db.insert('languages', language.toJson());
     return res;
   }
 
@@ -77,22 +77,22 @@ class SQLiteDatabase {
     return list;
   }
 
-  Future<int> updateLanguages(Languages nuevoScan) async {
+  Future<int> updateLanguages(Languages language) async {
     final db = await database;
-    final res = await db.update('Languages', nuevoScan.toJson(),
-        where: 'id = ?', whereArgs: [nuevoScan.id]);
+    final res = await db.update('languages', language.toJson(),
+        where: 'id = ?', whereArgs: [language.id]);
     return res;
   }
 
   Future<int> deleteLanguage(int id) async {
     final db = await database;
-    final res = await db.delete('Languages', where: 'id = ?', whereArgs: [id]);
+    final res = await db.delete('languages', where: 'id = ?', whereArgs: [id]);
     return res;
   }
 
   Future<int> deleteAll() async {
     final db = await database;
-    final res = await db.rawDelete('DELETE FROM Languages');
+    final res = await db.rawDelete('DELETE FROM languages');
     return res;
   }
 }
