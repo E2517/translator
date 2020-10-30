@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/firebase/push_notifications_firebase.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/preferences/shared_preferences.dart';
@@ -8,13 +7,7 @@ import 'package:translator/views/favourites_views.dart';
 import 'package:translator/views/map_views.dart';
 import 'package:translator/views/translator_views.dart';
 
-void main() {
-  SQLiteDatabase.db.initDB();
-
-  SQLiteDatabase database;
-  database.getLanguageEnglish();
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override

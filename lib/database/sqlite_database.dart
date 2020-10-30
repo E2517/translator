@@ -17,12 +17,10 @@ class SQLiteDatabase {
     if (_database != null) return _database;
 
     _database = await initDB();
-    print('buen trabajo');
     return _database;
   }
 
   initDB() async {
-    print('estas en initDB');
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
 
     final path = join(documentsDirectory.path, 'language_firebase.db');
