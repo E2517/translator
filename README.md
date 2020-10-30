@@ -1,6 +1,6 @@
 # [![Flutter logo][]][flutter.dev]
 
-A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern, Bloc pattern, Push Notifications (Firebase), Shared Preferences, ChangeNotifier to manage the state, Maps and CI/CD with GitHub Actions
+A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern,  Bloc pattern, Push Notifications (Firebase), Shared Preferences, SQLite Relational Database (develop branch), ChangeNotifier to manage the state, Maps and CI/CD with GitHub Actions
 
 ## Flutter commnads
 
