@@ -26,4 +26,17 @@ class Languages {
         "english": english,
         "spanish": spanish,
       };
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'english': english,
+      'spanish': spanish,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Language{id: $id, english: $english, spanish: $spanish}';
+  }
 }

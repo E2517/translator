@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:translator/database/sqlite_database.dart';
 
 class HeaderInfo extends StatelessWidget {
-  final SQLiteDatabase sqLiteDatabase;
-  const HeaderInfo({Key key, @required this.sqLiteDatabase}) : super(key: key);
+  final SQLiteDatabase db;
+  const HeaderInfo({Key key, @required this.db}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,10 @@ class HeaderInfo extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           subtitle: FutureBuilder(
-            future: sqLiteDatabase.getLanguagesEnglish('english'),
+            future: db.getLanguageEnglish(),
             builder: (context, snapshot) {
               return Text(
-                snapshot.data,
+                snapshot.data[0],
                 style: TextStyle(color: Colors.black),
               );
             },

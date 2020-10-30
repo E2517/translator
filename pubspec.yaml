@@ -20,7 +20,7 @@ dependencies:
   provider:
   mapbox_gl:
   sqflite:
-  path:
+  path_provider:
 
 dev_dependencies:
   flutter_test:

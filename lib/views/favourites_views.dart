@@ -11,7 +11,7 @@ class Favourites extends StatefulWidget {
 }
 
 class _FavouritesState extends State<Favourites> {
-  SQLiteDatabase sqLiteDatabase;
+  SQLiteDatabase db;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,7 @@ class _FavouritesState extends State<Favourites> {
                 }
 
                 return BodyFavourites(
-                  sqLiteDatabase: sqLiteDatabase,
+                  db: db,
                 );
               },
             );
