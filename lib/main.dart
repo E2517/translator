@@ -42,10 +42,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void datos() async {
-    print('Por fin ${await SQLiteDatabase.db.getAllLanguages()}');
+    // print('Data ${await SQLiteDatabase.db.getAllLanguages()}');
     // SQLiteDatabase.db.deleteAll();
-
-    // List data = await SQLiteDatabase.db.getAllLanguages();
   }
 
   @override
