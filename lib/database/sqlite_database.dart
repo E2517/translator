@@ -65,7 +65,7 @@ class SQLiteDatabase {
     return list;
   }
 
-  Future<List<Languages>> getLanguageEnglish(String english) async {
+  Future<List<Languages>> getLanguagesEnglish(String english) async {
     final db = await database;
     final res =
         await db.rawQuery("SELECT * FROM languages WHERE english='$english'");
@@ -75,7 +75,7 @@ class SQLiteDatabase {
     return list;
   }
 
-  Future<List<Languages>> getLanguageSpanish(String spanish) async {
+  Future<List<Languages>> getLanguagesSpanish(String spanish) async {
     final db = await database;
     final res =
         await db.rawQuery("SELECT * FROM languages WHERE spanish='$spanish'");
