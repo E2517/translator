@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:translator/database/sqlite_database.dart';
 
 class BodyFavourites extends StatelessWidget {
-  final SQLiteDatabase sqLiteDatabase;
-  const BodyFavourites({Key key, @required this.sqLiteDatabase})
-      : super(key: key);
+  final SQLiteDatabase db;
+  const BodyFavourites({Key key, @required this.db}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +46,7 @@ class BodyFavourites extends StatelessWidget {
                           ),
                           SizedBox(height: 10.0),
                           FutureBuilder(
-                            future:
-                                sqLiteDatabase.getLanguagesEnglish('english'),
+                            future: db.getLanguagesEnglish('english'),
                             builder: (context, snapshot) {
                               return Text(
                                 snapshot.data,
@@ -73,8 +71,7 @@ class BodyFavourites extends StatelessWidget {
                           ),
                           SizedBox(height: 10.0),
                           FutureBuilder(
-                            future:
-                                sqLiteDatabase.getLanguagesEnglish('spanish'),
+                            future: db.getLanguagesSpanish('spanish'),
                             builder: (context, snapshot) {
                               return Text(
                                 snapshot.data,

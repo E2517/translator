@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/models/languajes_models.dart';
 
 class PushNotifications {
@@ -23,11 +22,12 @@ class PushNotifications {
         english = message['data']['english'] ?? 'no-data';
         dynamic spanish;
         spanish = message['data']['spanish'] ?? 'no-data';
+
         final data = Languages(
           english: english,
           spanish: spanish,
         );
-        await SQLiteDatabase.db.insertLanguage(data);
+
         _messagesController.sink.add(data);
       },
       onLaunch: (Map<String, dynamic> message) async {
