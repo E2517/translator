@@ -59,14 +59,16 @@ class BodyFavourites extends StatelessWidget {
                         children: [
                           Text(
                             'Spanish',
-                            style: TextStyle(fontSize: 24.0),
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Color.fromRGBO(106, 197, 220, 1)),
                           ),
                           SizedBox(height: 10.0),
                           Text(
                             'Google Translate API',
                             style: TextStyle(
-                                fontSize: 30.0,
-                                color: Color.fromRGBO(106, 197, 220, 1)),
+                              fontSize: 30.0,
+                            ),
                           )
                         ]),
                   ),
