@@ -78,7 +78,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     //Push notifications: implementation platform('com.google.firebase:firebase-bom:25.12.0')
-    implementation 'com.google.firebase:firebase-messaging:<latest_version>'
+    implementation 'com.google.firebase:firebase-messaging:21.0.0'
 }
 
 //Push notifications
