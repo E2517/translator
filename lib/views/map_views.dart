@@ -3,17 +3,15 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/widgets/Map/header_map_widget.dart';
 
-class Map extends StatefulWidget {
+class MapBox extends StatefulWidget {
   @override
-  _MapState createState() => _MapState();
+  _MapBoxState createState() => _MapBoxState();
 }
 
-class _MapState extends State<Map> {
-  SQLiteDatabase db;
+class _MapBoxState extends State<MapBox> {
   String selectedStyle = 'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n';
   final dark = 'mapbox://styles/congomap/ckgoy5ok80l6s1apmpcdqiy9n';
   final blue = 'mapbox://styles/congomap/ckgs5h9mr01qb19o0jgztrbhm';
@@ -56,7 +54,7 @@ class _MapState extends State<Map> {
         children: [
           Container(
             child: dataPushNotifications != null
-                ? HeaderInfo(db: db)
+                ? HeaderInfo()
                 : MapboxMap(
                     accessToken:
                         'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',

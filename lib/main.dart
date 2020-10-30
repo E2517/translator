@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/firebase/push_notifications_firebase.dart';
+import 'package:translator/models/languajes_models.dart';
+// import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/views/favourites_views.dart';
@@ -26,14 +29,28 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _pushNotifications.initNotifications();
       _pushNotifications.messages.listen((data) {
-        SharedPref().saveFirebaseData(data);
+        print('Push Notifications data: ${data[0]} ${data[1]} ${data[2]}');
+        final lang = Languages(
+            id: int.tryParse(data[0]), english: data[1], spanish: data[2]);
+
+        SQLiteDatabase.db.insertLanguagesByRaw(lang);
+
+        SharedPref().saveFirebaseData(data[1]);
         navigatorKey.currentState.pushNamed('map', arguments: data);
       });
     });
   }
 
+  void datos() async {
+    print('Por fin ${await SQLiteDatabase.db.getAllLanguages()}');
+    // SQLiteDatabase.db.deleteAll();
+
+    // List data = await SQLiteDatabase.db.getAllLanguages();
+  }
+
   @override
   Widget build(BuildContext context) {
+    datos();
     return ChangeNotifierProvider(
       create: (context) => TranslateModel(),
       child: MaterialApp(
@@ -45,7 +62,7 @@ class _MyAppState extends State<MyApp> {
         routes: {
           'home': (BuildContext context) => Translator(),
           'favourites': (BuildContext context) => Favourites(),
-          'map': (BuildContext context) => Map(),
+          'map': (BuildContext context) => MapBox(),
         },
         onUnknownRoute: (RouteSettings settings) {
           print('Not founded route: ${settings.name}');
