@@ -102,4 +102,11 @@ class SQLiteDatabase {
     final res = await db.rawDelete('DELETE FROM languages');
     return res;
   }
+  
+  Future<void> checkDatabase() async {
+    print('Data ${await SQLiteDatabase.db.getAllLanguages()}');
+    SQLiteDatabase.db.deleteAll();
+    print(await SQLiteDatabase.db.getLanguageByIndex('english', 0));
+  }
+  
 }
