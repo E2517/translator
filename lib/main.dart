@@ -40,15 +40,9 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void checkDatabase() async {
-    // print('Data ${await SQLiteDatabase.db.getAllLanguages()}');
-    // SQLiteDatabase.db.deleteAll();
-    // print(await SQLiteDatabase.db.getLanguageByIndex('english', 0));
-  }
-
   @override
   Widget build(BuildContext context) {
-    checkDatabase();
+    SQLiteDatabase.db.checkDatabase();
     return ChangeNotifierProvider(
       create: (context) => TranslateModel(),
       child: MaterialApp(
