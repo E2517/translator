@@ -46,7 +46,7 @@ class SQLiteDatabase {
 
   insertLanguages(Languages lang) async {
     final db = await database;
-    final res = await db.insert('languages', lang.toJson());
+    final res = await db.insert('languages', lang.toMap());
     return res;
   }
 
@@ -111,7 +111,7 @@ class SQLiteDatabase {
 
   Future<int> updateLanguages(Languages language) async {
     final db = await database;
-    final res = await db.update('languages', language.toJson(),
+    final res = await db.update('languages', language.toMap(),
         where: 'id = ?', whereArgs: [language.id]);
     return res;
   }

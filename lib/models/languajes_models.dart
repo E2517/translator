@@ -2,7 +2,7 @@ import 'dart:convert';
 
 Languages languagesFromJson(String str) => Languages.fromJson(json.decode(str));
 
-String languagesToJson(Languages data) => json.encode(data.toJson());
+String languagesToJson(Languages data) => json.encode(data.toMap());
 
 class Languages {
   Languages({
@@ -20,12 +20,6 @@ class Languages {
         english: json["english"],
         spanish: json["spanish"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "english": english,
-        "spanish": spanish,
-      };
 
   Map<String, dynamic> toMap() {
     return {
