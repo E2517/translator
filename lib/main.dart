@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/firebase/push_notifications_firebase.dart';
 import 'package:translator/models/languajes_models.dart';
-// import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/models/translate_models.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/views/favourites_views.dart';
