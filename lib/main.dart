@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
         routes: {
           'home': (BuildContext context) => Translator(),
           'favourites': (BuildContext context) => Favourites(),
-          'map': (BuildContext context) => Map(),
+          'map': (BuildContext context) => MapBox(),
         },
         onUnknownRoute: (RouteSettings settings) {
           print('Not founded route: ${settings.name}');
