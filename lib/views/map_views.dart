@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -32,6 +33,13 @@ class _MapBoxState extends State<MapBox> {
     return controller.addImage(name, list);
   }
 
+  Future<Map<String, dynamic>> _loadConfigFile() async {
+    String jsonString =
+        await rootBundle.loadString('assets/config/config.json');
+    print('Hola $jsonString');
+    return jsonDecode(jsonString) as Map<String, dynamic>;
+  }
+
   @override
   Widget build(BuildContext context) {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
@@ -55,16 +63,21 @@ class _MapBoxState extends State<MapBox> {
           Container(
             child: dataPushNotifications != null
                 ? HeaderInfo()
-                : MapboxMap(
-                    accessToken:
-                        'pk.eyJ1IjoiY29uZ29tYXAiLCJhIjoiY2tnb3dzeGNyMGduNzJ6bW4yOXVuZTk2ZyJ9.AjUBf6jX3xmPqdF6ZO5qxQ',
-                    onMapCreated: _onMapCreated,
-                    onStyleLoadedCallback: _onStyleLoaded,
-                    styleString: selectedStyle,
-                    initialCameraPosition: const CameraPosition(
-                      target: LatLng(51.50853, -0.12574),
-                      zoom: 11.0,
-                    ),
+                : FutureBuilder(
+                    future: _loadConfigFile(),
+                    builder: (context,
+                        AsyncSnapshot<Map<String, dynamic>> snapshot) {
+                      return MapboxMap(
+                        accessToken: snapshot.data['mapbox_api_token'],
+                        onMapCreated: _onMapCreated,
+                        onStyleLoadedCallback: _onStyleLoaded,
+                        styleString: selectedStyle,
+                        initialCameraPosition: const CameraPosition(
+                          target: LatLng(51.50853, -0.12574),
+                          zoom: 11.0,
+                        ),
+                      );
+                    },
                   ),
           ),
           Row(
