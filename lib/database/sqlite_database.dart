@@ -65,48 +65,23 @@ class SQLiteDatabase {
     return list;
   }
 
-  Future<List<Languages>> getLanguagesEnglish(String english) async {
+  Future<List<Languages>> getLanguage(String language) async {
     final db = await database;
-    final res =
-        await db.rawQuery("SELECT * FROM languages WHERE english='$english'");
+    final res = await db.rawQuery('SELECT $language FROM languages');
 
     List<Languages> list =
         res.isNotEmpty ? res.map((c) => Languages.fromJson(c)).toList() : [];
     return list;
   }
 
-  Future<List<Languages>> getLanguagesSpanish(String spanish) async {
+  Future<List<Languages>> getLanguageByIndex(String language, int index) async {
     final db = await database;
     final res =
-        await db.rawQuery("SELECT * FROM languages WHERE spanish='$spanish'");
+        await db.rawQuery('SELECT $language FROM languages WHERE id=$index');
 
     List<Languages> list =
         res.isNotEmpty ? res.map((c) => Languages.fromJson(c)).toList() : [];
     return list;
-  }
-
-  Future<List<Languages>> getLanguageEnglish() async {
-    final Database db = await database;
-
-    final List<Map<String, dynamic>> maps = await db.query('languages');
-
-    return List.generate(maps.length, (i) {
-      return Languages(
-        english: maps[i]['english'],
-      );
-    });
-  }
-
-  Future<List<Languages>> getLanguageSpanish() async {
-    final Database db = await database;
-
-    final List<Map<String, dynamic>> maps = await db.query('languages');
-
-    return List.generate(maps.length, (i) {
-      return Languages(
-        spanish: maps[i]['spanish'],
-      );
-    });
   }
 
   Future<int> updateLanguages(Languages language) async {

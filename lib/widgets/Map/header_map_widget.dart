@@ -20,7 +20,7 @@ class HeaderInfo extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           subtitle: FutureBuilder(
-            future: SQLiteDatabase.db.getAllLanguages(),
+            future: SQLiteDatabase.db.getLanguageByIndex('english', 1),
             builder: (context, snapshot) {
               List<Languages> data = snapshot.data ?? [];
               return ListView.builder(
