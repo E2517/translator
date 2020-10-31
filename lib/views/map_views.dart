@@ -36,7 +36,6 @@ class _MapBoxState extends State<MapBox> {
   Future<Map<String, dynamic>> _loadConfigFile() async {
     String jsonString =
         await rootBundle.loadString('assets/config/config.json');
-    print('Hola $jsonString');
     return jsonDecode(jsonString) as Map<String, dynamic>;
   }
 
