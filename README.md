@@ -55,6 +55,16 @@ flutter build apk
 flutter build appbundle
 ```
 
+## Mapbox 
+
+Go to MabBox to generate the TOKEN and Create a folder inside of assets with the name config and inside config create a config.json (have a look to the class map_views.dart)
+
+```
+{
+"mapbox_api_token": "YOUR TOKEN HERE"
+}
+```
+
 ## e2517
 
 ![flutter][]
