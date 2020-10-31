@@ -55,10 +55,9 @@ flutter build apk
 flutter build appbundle
 ```
 
-## e2517
+## Push Notifications Data
 
-![flutter][]
-![map][]
+![master][]
 
 
 ## GitHub Actions (CI/CD): Testing and Release APK for Android
@@ -71,5 +70,6 @@ flutter build appbundle
 [flutter]: https://github.com/E2517/images/blob/main/images/translator/translator.png
 [map]:https://github.com/E2517/images/blob/main/images/translator/mapboxgithub.png
 [github]: https://github.com/E2517/images/blob/main/images/translator/githubactions.png
+[master]: https://github.com/E2517/images/blob/main/images/translator/master.png
 
 - Upgrade the minimum SDK Version to 20 in Android and iOS to use MapBox
