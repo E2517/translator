@@ -31,15 +31,29 @@ class PushNotifications {
       onLaunch: (Map<String, dynamic> message) async {
         print("onLaunch: $message");
 
-        dynamic data;
-        data = message['data']['english'] ?? 'no-data';
+        dynamic id;
+        id = message['data']['id'] ?? 'no-data';
+        dynamic english;
+        english = message['data']['english'] ?? 'no-data';
+        dynamic spanish;
+        spanish = message['data']['spanish'] ?? 'no-data';
+
+        List data = [id, english, spanish];
+
         _messagesController.sink.add(data);
       },
       onResume: (Map<String, dynamic> message) async {
         print("onResume: $message");
 
-        dynamic data;
-        data = message['data']['english'] ?? 'no-data';
+        dynamic id;
+        id = message['data']['id'] ?? 'no-data';
+        dynamic english;
+        english = message['data']['english'] ?? 'no-data';
+        dynamic spanish;
+        spanish = message['data']['spanish'] ?? 'no-data';
+
+        List data = [id, english, spanish];
+
         _messagesController.sink.add(data);
       },
     );
