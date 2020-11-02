@@ -67,7 +67,8 @@ class _MapBoxState extends State<MapBox> {
                     builder: (context,
                         AsyncSnapshot<Map<String, dynamic>> snapshot) {
                       return MapboxMap(
-                        accessToken: snapshot.data['mapbox_api_token'],
+                        accessToken:
+                            snapshot.data['mapbox_api_token'] as String,
                         onMapCreated: _onMapCreated,
                         onStyleLoadedCallback: _onStyleLoaded,
                         styleString: selectedStyle,
