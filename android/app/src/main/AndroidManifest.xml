@@ -48,9 +48,5 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <!-- Push notifications -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="notification_channel_id" />
     </application>
 </manifest>

@@ -61,7 +61,7 @@ class _MapBoxState extends State<MapBox> {
         children: [
           Container(
             child: dataPushNotifications != null
-                ? HeaderInfo(text: dataPushNotifications)
+                ? HeaderInfo()
                 : FutureBuilder(
                     future: _loadConfigFile(),
                     builder: (context,

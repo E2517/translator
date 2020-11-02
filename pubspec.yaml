@@ -17,6 +17,8 @@ dependencies:
   firebase_messaging:
   provider:
   mapbox_gl:
+  sqflite:
+  path_provider:
 
 dev_dependencies:
   flutter_test:

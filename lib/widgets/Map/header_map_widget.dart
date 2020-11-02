@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:translator/database/sqlite_database.dart';
 
 class HeaderInfo extends StatelessWidget {
-  final String text;
-  const HeaderInfo({Key key, @required this.text}) : super(key: key);
+  const HeaderInfo({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,20 @@ class HeaderInfo extends StatelessWidget {
             'Carlos',
             style: TextStyle(color: Colors.black),
           ),
-          subtitle: Text(
-            text,
-            style: TextStyle(color: Colors.black),
+          subtitle: FutureBuilder(
+            future: SQLiteDatabase.db.getLanguageByIndex('english', 1),
+            builder: (context, snapshot) {
+              List<Languages> data = snapshot.data ?? [];
+              return ListView.builder(
+                shrinkWrap: true,
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  Languages lang = data[index];
+                  return Text(lang.english,
+                      style: TextStyle(color: Colors.black));
+                },
+              );
+            },
           ),
           trailing: Icon(
             Icons.g_translate,
