@@ -1,6 +1,6 @@
 # [![Flutter logo][]][flutter.dev]
 
-A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern, Bloc pattern, Push Notifications (Firebase), Shared Preferences, SQLite Relational Database (develop branch), ChangeNotifier to manage the state, Maps and CI/CD with GitHub Actions
+A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern,  Bloc pattern, Push Notifications (Firebase), Shared Preferences, SQLite Relational Database (develop branch), ChangeNotifier to manage the state, Maps and CI/CD with GitHub Actions.
 
 ## Flutter commnads
 
@@ -65,14 +65,14 @@ Go to MabBox to generate the TOKEN and Create a folder inside of assets with the
 }
 ```
 
-## e2517		 
- 
- ![flutter][]		
- ![map][]
- 
+## e2517
+
+![flutter][]
+![map][]
+
 ## Push Notifications Data
 
-![master][]
+![develop][]
 
 
 ## GitHub Actions (CI/CD): Testing and Release APK for Android
@@ -85,6 +85,6 @@ Go to MabBox to generate the TOKEN and Create a folder inside of assets with the
 [flutter]: https://github.com/E2517/images/blob/main/images/translator/translator.png
 [map]:https://github.com/E2517/images/blob/main/images/translator/mapboxgithub.png
 [github]: https://github.com/E2517/images/blob/main/images/translator/githubactions.png
-[master]: https://github.com/E2517/images/blob/main/images/translator/master.png
+[develop]: https://github.com/E2517/images/blob/main/images/translator/develop.png
 
 - Upgrade the minimum SDK Version to 20 in Android and iOS to use MapBox

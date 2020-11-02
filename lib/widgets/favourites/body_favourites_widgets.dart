@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:translator/database/sqlite_database.dart';
 
 class BodyFavourites extends StatelessWidget {
-  final AsyncSnapshot snapshot;
-  const BodyFavourites({Key key, @required this.snapshot}) : super(key: key);
+  const BodyFavourites({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +44,22 @@ class BodyFavourites extends StatelessWidget {
                                 color: Color.fromRGBO(106, 197, 220, 1)),
                           ),
                           SizedBox(height: 10.0),
-                          Text(
-                            snapshot.data,
-                            style: TextStyle(fontSize: 30.0),
+                          FutureBuilder(
+                            future: SQLiteDatabase.db.getAllLanguages(),
+                            builder: (context, snapshot) {
+                              List<Languages> data = snapshot.data ?? [];
+                              return ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: data.length,
+                                itemBuilder: (context, index) {
+                                  Languages lang = data[index];
+                                  return Text(
+                                    lang.english,
+                                    style: TextStyle(fontSize: 30.0),
+                                  );
+                                },
+                              );
+                            },
                           )
                         ]),
                   ),
@@ -64,11 +77,22 @@ class BodyFavourites extends StatelessWidget {
                                 color: Color.fromRGBO(106, 197, 220, 1)),
                           ),
                           SizedBox(height: 10.0),
-                          Text(
-                            'Google Translate API',
-                            style: TextStyle(
-                              fontSize: 30.0,
-                            ),
+                          FutureBuilder(
+                            future: SQLiteDatabase.db.getAllLanguages(),
+                            builder: (context, snapshot) {
+                              List<Languages> data = snapshot.data ?? [];
+                              return ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: data.length,
+                                itemBuilder: (context, index) {
+                                  Languages lang = data[index];
+                                  return Text(
+                                    lang.spanish,
+                                    style: TextStyle(fontSize: 30.0),
+                                  );
+                                },
+                              );
+                            },
                           )
                         ]),
                   ),

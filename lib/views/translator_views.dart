@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:translator/preferences/shared_preferences.dart';
+import 'package:translator/utils/alert_utils.dart' as utils;
 import 'package:translator/widgets/translator/body_translator_widgets.dart';
 import 'package:translator/widgets/bottom_widgets.dart';
 import 'package:translator/widgets/translator/header_translator_widget.dart';
@@ -49,7 +50,7 @@ class _TranslatorState extends State<Translator> {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('home', (route) => false);
               } else if (index == 1) {
-                SharedPref().removeFirebaseData('firebase');
+                utils.showAlert(context, 'Do you want to remove all data?');
                 _refresh();
               } else if (index == 2) {
                 Navigator.of(context).pushNamedAndRemoveUntil(
