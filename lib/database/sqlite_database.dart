@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
@@ -7,7 +8,7 @@ import 'package:translator/models/languajes_models.dart';
 
 export 'package:translator/models/languajes_models.dart';
 
-class SQLiteDatabase {
+class SQLiteDatabase extends ChangeNotifier {
   static Database _database;
   static final SQLiteDatabase db = SQLiteDatabase._();
 
@@ -41,18 +42,21 @@ class SQLiteDatabase {
     final res =
         await db.rawInsert("INSERT Into languages (id, english, spanish) "
             "VALUES ( ${lang.id}, '${lang.english}', '${lang.spanish}' )");
+    notifyListeners();
     return res;
   }
 
   insertLanguages(Languages lang) async {
     final db = await database;
     final res = await db.insert('languages', lang.toMap());
+    notifyListeners();
     return res;
   }
 
   Future<Languages> getLanguagesById(int id) async {
     final db = await database;
     final res = await db.query('languages', where: 'id = ?', whereArgs: [id]);
+    notifyListeners();
     return res.isNotEmpty ? Languages.fromJson(res.first) : null;
   }
 
@@ -62,6 +66,7 @@ class SQLiteDatabase {
 
     List<Languages> list =
         res.isNotEmpty ? res.map((c) => Languages.fromJson(c)).toList() : [];
+    notifyListeners();
     return list;
   }
 
@@ -71,6 +76,7 @@ class SQLiteDatabase {
 
     List<Languages> list =
         res.isNotEmpty ? res.map((c) => Languages.fromJson(c)).toList() : [];
+    notifyListeners();
     return list;
   }
 
@@ -81,6 +87,7 @@ class SQLiteDatabase {
 
     List<Languages> list =
         res.isNotEmpty ? res.map((c) => Languages.fromJson(c)).toList() : [];
+    notifyListeners();
     return list;
   }
 
@@ -88,24 +95,26 @@ class SQLiteDatabase {
     final db = await database;
     final res = await db.update('languages', language.toMap(),
         where: 'id = ?', whereArgs: [language.id]);
+    notifyListeners();
     return res;
   }
 
   Future<int> deleteLanguage(int id) async {
     final db = await database;
     final res = await db.delete('languages', where: 'id = ?', whereArgs: [id]);
+    notifyListeners();
     return res;
   }
 
   Future<int> deleteAll() async {
     final db = await database;
     final res = await db.rawDelete('DELETE FROM languages');
+    notifyListeners();
     return res;
   }
 
   Future<void> checkDatabase() async {
     print('Data ${await SQLiteDatabase.db.getAllLanguages()}');
-    SQLiteDatabase.db.deleteAll();
     print(await SQLiteDatabase.db.getLanguageByIndex('english', 0));
   }
 }

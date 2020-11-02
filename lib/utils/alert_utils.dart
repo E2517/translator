@@ -20,7 +20,8 @@ void showAlert(BuildContext context, String message) {
               ),
               onPressed: () {
                 SharedPref().removeFirebaseData('firebase');
-                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('translator', (route) => true);
               },
               onLongPress: () {
                 SQLiteDatabase.db.deleteAll();

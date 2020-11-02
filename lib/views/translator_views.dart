@@ -50,7 +50,7 @@ class _TranslatorState extends State<Translator> {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('home', (route) => false);
               } else if (index == 1) {
-                utils.showAlert(context, 'Do you want to remove all Data?');
+                utils.showAlert(context, 'Do you want to remove all data?');
                 _refresh();
               } else if (index == 2) {
                 Navigator.of(context).pushNamedAndRemoveUntil(

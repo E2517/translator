@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:translator/models/translate_models.dart';
+import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/widgets/bottom_widgets.dart';
 import 'package:translator/widgets/favourites/body_favourites_widgets.dart';
 
@@ -17,10 +17,10 @@ class _FavouritesState extends State<Favourites> {
           title: Text('Favourites'),
           centerTitle: true,
         ),
-        body: Consumer<TranslateModel>(
+        body: Consumer<SQLiteDatabase>(
           builder: (context, translate, child) {
             return FutureBuilder(
-              future: translate.dataFirebase,
+              future: SQLiteDatabase.db.getAllLanguages(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
                   return Center(
