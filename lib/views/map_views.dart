@@ -126,9 +126,6 @@ class _MapBoxState extends State<MapBox> {
           child: FutureBuilder(
               future: SharedPref().getFirebaseData('firebase'),
               builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return Center(child: CircularProgressIndicator());
-                }
                 return FloatingActionButton(
                   backgroundColor: Color.fromRGBO(106, 197, 220, 1),
                   child: Icon(Icons.person_pin),
