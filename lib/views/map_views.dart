@@ -66,6 +66,9 @@ class _MapBoxState extends State<MapBox> {
                     future: _loadConfigFile(),
                     builder: (context,
                         AsyncSnapshot<Map<String, dynamic>> snapshot) {
+                      if (!snapshot.hasData) {
+                        return Center(child: CircularProgressIndicator());
+                      }
                       return MapboxMap(
                         accessToken:
                             snapshot.data['mapbox_api_token'] as String,
