@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:translator/database/sqlite_database.dart';
+import 'package:translator/models/languajes_models.dart';
+import 'package:translator/preferences/shared_preferences.dart';
 
 class PushNotifications {
   FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
@@ -26,6 +29,12 @@ class PushNotifications {
 
         List data = [id, english, spanish];
 
+        final lang =
+            Languages(id: int.tryParse(id), english: english, spanish: spanish);
+
+        SQLiteDatabase.db.insertLanguagesByRaw(lang);
+        SharedPref().saveFirebaseData(english);
+
         _messagesController.sink.add(data);
       },
       onLaunch: (Map<String, dynamic> message) async {
@@ -40,6 +49,12 @@ class PushNotifications {
 
         List data = [id, english, spanish];
 
+        final lang =
+            Languages(id: int.tryParse(id), english: english, spanish: spanish);
+
+        SQLiteDatabase.db.insertLanguagesByRaw(lang);
+        SharedPref().saveFirebaseData(english);
+
         _messagesController.sink.add(data);
       },
       onResume: (Map<String, dynamic> message) async {
@@ -53,6 +68,12 @@ class PushNotifications {
         spanish = message['data']['spanish'] ?? 'no-data';
 
         List data = [id, english, spanish];
+
+        final lang =
+            Languages(id: int.tryParse(id), english: english, spanish: spanish);
+
+        SQLiteDatabase.db.insertLanguagesByRaw(lang);
+        SharedPref().saveFirebaseData(english);
 
         _messagesController.sink.add(data);
       },
