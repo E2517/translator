@@ -43,6 +43,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     SQLiteDatabase.db.checkDatabase();
+    // SQLiteDatabase.db.deleteAll();
     return ChangeNotifierProvider(
       create: (context) => TranslateModel(),
       child: MaterialApp(
