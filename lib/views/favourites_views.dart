@@ -18,7 +18,7 @@ class _FavouritesState extends State<Favourites> {
           centerTitle: true,
         ),
         body: Consumer<SQLiteDatabase>(
-          builder: (context, translate, child) {
+          builder: (context, database, child) {
             return FutureBuilder(
               future: SQLiteDatabase.db.getAllLanguages(),
               builder: (context, snapshot) {
