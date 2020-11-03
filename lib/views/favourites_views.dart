@@ -22,7 +22,8 @@ class _FavouritesState extends State<Favourites> {
             return FutureBuilder(
               future: SQLiteDatabase.db.getAllLanguages(),
               builder: (context, snapshot) {
-                if (!snapshot.hasData) {
+                List<Languages> data = snapshot.data ?? [];
+                if (data.isEmpty) {
                   return Center(
                       child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +58,7 @@ class _FavouritesState extends State<Favourites> {
             setState(() {
               if (index == 0) {
                 Navigator.of(context)
-                    .pushNamedAndRemoveUntil('home', (route) => false);
+                    .pushNamedAndRemoveUntil('translator', (route) => false);
               } else if (index == 1) {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('map', (route) => false);
