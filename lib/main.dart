@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final _pushNotifications = new PushNotifications();
-  GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
+  // GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _pushNotifications.initNotifications();
       _pushNotifications.messages.listen((data) {
-        navigatorKey.currentState.pushNamed('map', arguments: data);
+        // navigatorKey.currentState.pushNamed('map', arguments: data);
       });
     });
   }
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     SQLiteDatabase.db.checkDatabase();
 
     return MaterialApp(
-      navigatorKey: navigatorKey,
+      // navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Translate',
       theme: ThemeData.dark(),

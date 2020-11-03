@@ -48,7 +48,7 @@ class _TranslatorState extends State<Translator> {
             setState(() {
               if (index == 0) {
                 Navigator.of(context)
-                    .pushNamedAndRemoveUntil('home', (route) => false);
+                    .pushNamedAndRemoveUntil('translator', (route) => false);
               } else if (index == 1) {
                 utils.showAlert(context, 'Do you want to remove all data?');
                 _refresh();
