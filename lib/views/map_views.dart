@@ -54,7 +54,7 @@ class _MapBoxState extends State<MapBox> {
         leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.pushNamed(context, 'home');
+              Navigator.pushNamed(context, 'translator');
             }),
       ),
       body: Stack(
