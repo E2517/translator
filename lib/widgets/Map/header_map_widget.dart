@@ -40,7 +40,7 @@ class HeaderInfo extends StatelessWidget {
           ),
           onTap: () {
             Navigator.of(context)
-                .pushNamedAndRemoveUntil('home', (route) => false);
+                .pushNamedAndRemoveUntil('translator', (route) => false);
           },
         ),
       ),
