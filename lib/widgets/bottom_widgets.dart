@@ -10,7 +10,7 @@ class CustomBottomNavigationBar extends BottomNavigationBar {
       Icon iconOne,
       Icon iconTwo,
       Icon iconThree,
-      Function(int index) onTap})
+      @required Function(int index) onTap})
       : super(
             key: key,
             fixedColor: Color.fromRGBO(106, 197, 220, 1),
