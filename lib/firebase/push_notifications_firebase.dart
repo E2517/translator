@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:translator/database/sqlite_database.dart';
-import 'package:translator/models/languajes_models.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 
 class PushNotifications {
