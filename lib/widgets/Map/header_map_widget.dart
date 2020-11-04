@@ -21,12 +21,12 @@ class HeaderInfo extends StatelessWidget {
           subtitle: Text('You have a new notitication',
               style: TextStyle(color: Colors.black)),
           trailing: Icon(
-            Icons.g_translate,
+            Icons.map,
             color: Colors.black,
           ),
           onTap: () {
             Navigator.of(context)
-                .pushNamedAndRemoveUntil('translator', (route) => false);
+                .pushNamedAndRemoveUntil('map', (route) => false);
           },
         ),
       ),
