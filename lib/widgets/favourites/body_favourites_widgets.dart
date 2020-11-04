@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:translator/database/sqlite_database.dart';
+import 'package:translator/utils/alert_cupertino_utils.dart';
 
 class BodyFavourites extends StatefulWidget {
   const BodyFavourites({Key key}) : super(key: key);
@@ -45,72 +46,46 @@ class _BodyFavouritesState extends State<BodyFavourites> {
                           if (direction == DismissDirection.endToStart) {
                             final bool res = await showDialog(
                                 context: context,
-                                child: CupertinoAlertDialog(
-                                  title: Text(
-                                    'Favourites',
-                                    style: TextStyle(fontSize: 24.0),
-                                  ),
-                                  content: Text(
+                                child: CustomAlertCupertino(
+                                  title: 'Favourites',
+                                  description:
                                       'Are you sure you want to delete',
-                                      style: TextStyle(fontSize: 18.0)),
-                                  actions: <Widget>[
-                                    CupertinoDialogAction(
-                                        isDefaultAction: true,
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('Cancel')),
-                                    CupertinoDialogAction(
-                                        textStyle: TextStyle(
-                                            fontSize: 18.0, color: Colors.red),
-                                        isDefaultAction: true,
-                                        onPressed: () async {
-                                          setState(() {
-                                            SQLiteDatabase.db
-                                                .deleteLanguage(lang.id);
-                                            data.removeAt(index);
-                                            Navigator.of(context).pop();
-                                          });
-                                        },
-                                        child: Text('Delete')),
-                                  ],
+                                  onPressedCancel: () async {
+                                    Navigator.of(context).pop();
+                                  },
+                                  actionCancel: 'Cancel',
+                                  onPressedDeleteEdit: () async {
+                                    await SQLiteDatabase.db
+                                        .deleteLanguage(lang.id);
+                                    data.removeAt(index);
+                                    Navigator.of(context).pop();
+                                  },
+                                  actionDeleteEdit: 'Delete',
                                 ));
+
                             return res;
                           } else {
                             final bool res = await showDialog(
                                 context: context,
-                                child: CupertinoAlertDialog(
-                                  title: Text(
-                                    'Favourites',
-                                    style: TextStyle(fontSize: 24.0),
-                                  ),
-                                  content: Text('Are you sure you want to edit',
-                                      style: TextStyle(fontSize: 18.0)),
-                                  actions: <Widget>[
-                                    CupertinoDialogAction(
-                                        isDefaultAction: true,
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('Cancel')),
-                                    CupertinoDialogAction(
-                                        textStyle: TextStyle(
-                                            fontSize: 18.0, color: Colors.red),
-                                        isDefaultAction: true,
-                                        onPressed: () async {
-                                          setState(() {
-                                            SQLiteDatabase.db.updateLanguages(
-                                                Languages(
-                                                    id: 1,
-                                                    english: 'Hello',
-                                                    spanish: 'Hola'));
-                                            data.removeAt(index);
-                                            Navigator.of(context).pop();
-                                          });
-                                        },
-                                        child: Text('Edit')),
-                                  ],
+                                child: CustomAlertCupertino(
+                                  title: 'Favourites',
+                                  description: 'Are you sure you want to edit',
+                                  onPressedCancel: () async {
+                                    Navigator.of(context).pop();
+                                  },
+                                  actionCancel: 'Cancel',
+                                  onPressedDeleteEdit: () async {
+                                    await SQLiteDatabase.db.updateLanguages(
+                                        Languages(
+                                            id: 1,
+                                            english: 'Hello',
+                                            spanish: 'Hola'));
+                                    data.removeAt(index);
+                                    Navigator.of(context).pop();
+                                  },
+                                  actionDeleteEdit: 'Edit',
                                 ));
+
                             return res;
                           }
                         },
