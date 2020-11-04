@@ -18,7 +18,7 @@ class HeaderInfo extends StatelessWidget {
             'Carlos',
             style: TextStyle(color: Colors.black),
           ),
-          subtitle: Text('You have a new notitication',
+          subtitle: Text('You have a new notitication 📦',
               style: TextStyle(color: Colors.black)),
           trailing: Icon(
             Icons.map,
