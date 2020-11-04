@@ -44,7 +44,7 @@ class _MapBoxState extends State<MapBox> {
     final dataPushNotifications = ModalRoute.of(context).settings.arguments;
 
     if (dataPushNotifications != null) {
-      Timer(Duration(seconds: 10), () => Navigator.pushNamed(context, 'map'));
+      Timer(Duration(seconds: 5), () => Navigator.pushNamed(context, 'map'));
     }
 
     return Scaffold(
