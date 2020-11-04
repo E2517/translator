@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:translator/database/sqlite_database.dart';
 
 class HeaderInfo extends StatelessWidget {
   const HeaderInfo({Key key}) : super(key: key);
@@ -19,21 +18,8 @@ class HeaderInfo extends StatelessWidget {
             'Carlos',
             style: TextStyle(color: Colors.black),
           ),
-          subtitle: FutureBuilder(
-            future: SQLiteDatabase.db.getLanguageByIndex('english', 1),
-            builder: (context, snapshot) {
-              List<Languages> data = snapshot.data ?? [];
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  Languages lang = data[index];
-                  return Text(lang.english,
-                      style: TextStyle(color: Colors.black));
-                },
-              );
-            },
-          ),
+          subtitle: Text('You have a new notitication',
+              style: TextStyle(color: Colors.black)),
           trailing: Icon(
             Icons.g_translate,
             color: Colors.black,
