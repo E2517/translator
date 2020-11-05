@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:translator/preferences/shared_preferences.dart';
-import 'package:translator/widgets/Map/header_map_widget.dart';
+import 'package:translator/widgets/Map/header_map_widgets.dart';
 
 class MapBox extends StatefulWidget {
   @override
