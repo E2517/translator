@@ -17,6 +17,10 @@ flutter channel
 ```
 
 ```
+flutter create translator
+```
+
+```
 flutter pub get
 ```
 
