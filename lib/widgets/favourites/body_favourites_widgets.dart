@@ -49,7 +49,7 @@ class _BodyFavouritesState extends State<BodyFavourites> {
                                 child: CustomAlertCupertino(
                                   title: 'Favourites',
                                   description:
-                                      'Are you sure you want to delete?',
+                                      'Are you sure you want to remove this widget and delete it from the database?',
                                   onPressedCancel: () async {
                                     Navigator.of(context).pop();
                                   },
@@ -69,7 +69,8 @@ class _BodyFavouritesState extends State<BodyFavourites> {
                                 context: context,
                                 child: CustomAlertCupertino(
                                   title: 'Favourites',
-                                  description: 'Are you sure you want to edit?',
+                                  description:
+                                      'Are you sure you want to edit this widget and update the database?',
                                   onPressedCancel: () async {
                                     Navigator.of(context).pop();
                                   },
