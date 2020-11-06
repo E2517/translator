@@ -1,6 +1,6 @@
 # [![Flutter logo][]][flutter.dev]
 
-A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern,  Bloc pattern, Push Notifications (Firebase), Shared Preferences, SQLite Relational Database, ChangeNotifier to manage the state, Maps, Security, and CI/CD with GitHub Actions.
+A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern, Bloc pattern, Push Notifications (Firebase), Shared Preferences, SQLite Relational Database, ChangeNotifier to manage the state, Maps, Security, and CI/CD with GitHub Actions.
 
 ## Flutter commnads
 
@@ -59,7 +59,7 @@ flutter build apk
 flutter build appbundle
 ```
 
-## Mapbox 
+## Mapbox
 
 Go to MabBox to generate the TOKEN and Create a folder inside of assets with the name config and inside config create a config.json (have a look to the class map_views.dart)
 
@@ -78,7 +78,6 @@ Go to MabBox to generate the TOKEN and Create a folder inside of assets with the
 
 ![develop][]
 
-
 ## GitHub Actions (CI/CD): Testing and Release APK for Android
 
 ![github][]
@@ -87,7 +86,7 @@ Go to MabBox to generate the TOKEN and Create a folder inside of assets with the
 [flutter.dev]: https://flutter.dev
 [dart platform diagram]: https://github.com/flutter/website/blob/master/src/images/homepage/dart-diagram-small.png
 [flutter]: https://github.com/E2517/images/blob/main/images/translator/translator.png
-[map]:https://github.com/E2517/images/blob/main/images/translator/mapboxgithub.png
+[map]: https://github.com/E2517/images/blob/main/images/translator/mapboxgithub.png
 [github]: https://github.com/E2517/images/blob/main/images/translator/githubactions.png
 [develop]: https://github.com/E2517/images/blob/main/images/translator/develop.png
 
