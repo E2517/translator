@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [main]
+    branches: [security]
   pull_request:
-    branches: [main]
+    branches: [security]
 
 jobs:
   build:
