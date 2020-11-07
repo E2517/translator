@@ -4,8 +4,6 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:translator/database/sqlite_database.dart';
-import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/widgets/map/header_map_widgets.dart';
 
 class MapBox extends StatefulWidget {
@@ -119,27 +117,24 @@ class _MapBoxState extends State<MapBox> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: FutureBuilder(
-              future: SharedPref().getFirebaseData('token'),
-              builder: (context, snapshot) {
-                return FloatingActionButton(
-                  backgroundColor: Color.fromRGBO(106, 197, 220, 1),
-                  child: Icon(Icons.person_pin),
-                  onPressed: () {
-                    controller.addSymbol(
-                      SymbolOptions(
-                          geometry: LatLng(51.515419, -0.141099),
-                          iconSize: 0.4,
-                          iconImage: 'carlos',
-                          textField: snapshot.data,
-                          textColor: '#6AC5DC',
-                          textMaxWidth: 50.0,
-                          textOffset: Offset(0, 3)),
-                    );
-                  },
-                );
-              })),
+        padding: const EdgeInsets.only(bottom: 15.0),
+        child: FloatingActionButton(
+          backgroundColor: Color.fromRGBO(106, 197, 220, 1),
+          child: Icon(Icons.person_pin),
+          onPressed: () {
+            controller.addSymbol(
+              SymbolOptions(
+                  geometry: LatLng(51.515419, -0.141099),
+                  iconSize: 0.4,
+                  iconImage: 'carlos',
+                  textField: 'Full Stack Developer',
+                  textColor: '#6AC5DC',
+                  textMaxWidth: 50.0,
+                  textOffset: Offset(0, 3)),
+            );
+          },
+        ),
+      ),
     );
   }
 }
