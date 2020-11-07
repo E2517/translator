@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/utils/alert_cupertino_utils.dart' as utils;
 import 'package:translator/widgets/translator/body_translator_widgets.dart';
 import 'package:translator/widgets/bottom_widgets.dart';
@@ -57,7 +56,7 @@ class _TranslatorState extends State<Translator> {
               } else if (index == 2) {
                 Navigator.of(context).pushNamedAndRemoveUntil(
                     'favourites', (route) => true,
-                    arguments: SharedPref().getFirebaseData('firebase'));
+                    arguments: 'Pass arguments here');
               }
             });
           },
