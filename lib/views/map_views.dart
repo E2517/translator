@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/preferences/shared_preferences.dart';
 import 'package:translator/widgets/map/header_map_widgets.dart';
 
@@ -120,7 +121,7 @@ class _MapBoxState extends State<MapBox> {
       floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 15.0),
           child: FutureBuilder(
-              future: SharedPref().getFirebaseData('firebase'),
+              future: SharedPref().getFirebaseData('token'),
               builder: (context, snapshot) {
                 return FloatingActionButton(
                   backgroundColor: Color.fromRGBO(106, 197, 220, 1),
