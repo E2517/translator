@@ -13,6 +13,7 @@ class PushNotifications {
 
     _firebaseMessaging.getToken().then((token) {
       print('Firebase Token: $token');
+      SharedPref().saveFirebaseData(token);
     });
 
     _firebaseMessaging.configure(
@@ -32,7 +33,6 @@ class PushNotifications {
             Languages(id: int.tryParse(id), english: english, spanish: spanish);
 
         SQLiteDatabase.db.insertLanguagesByRaw(lang);
-        SharedPref().saveFirebaseData(english);
 
         _messagesController.sink.add(data);
       },
@@ -52,7 +52,6 @@ class PushNotifications {
             Languages(id: int.tryParse(id), english: english, spanish: spanish);
 
         SQLiteDatabase.db.insertLanguagesByRaw(lang);
-        SharedPref().saveFirebaseData(english);
 
         _messagesController.sink.add(data);
       },
@@ -72,7 +71,6 @@ class PushNotifications {
             Languages(id: int.tryParse(id), english: english, spanish: spanish);
 
         SQLiteDatabase.db.insertLanguagesByRaw(lang);
-        SharedPref().saveFirebaseData(english);
 
         _messagesController.sink.add(data);
       },

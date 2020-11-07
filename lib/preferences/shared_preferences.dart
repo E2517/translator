@@ -8,7 +8,7 @@ class SharedPref {
     return _prefs;
   }
 
-  Future saveFirebaseData(value) async => _prefs.setString('firebase', value);
+  Future saveFirebaseData(value) async => _prefs.setString('token', value);
 
   Future<String> getFirebaseData(String key) async => _prefs.getString(key);
 
