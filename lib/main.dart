@@ -1,4 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:provider/provider.dart';
 import 'package:translator/database/sqlite_database.dart';
 import 'package:translator/firebase/push_notifications_firebase.dart';
@@ -20,9 +23,34 @@ class _MyAppState extends State<MyApp> {
   final _pushNotifications = new PushNotifications();
   GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
 
+  bool _jailbroken;
+  bool _developerMode;
+
+  Future<void> initPlatformStateJailBreak() async {
+    bool jailbroken;
+    bool developerMode;
+    try {
+      jailbroken = await FlutterJailbreakDetection.jailbroken;
+      developerMode = await FlutterJailbreakDetection.developerMode;
+    } on PlatformException {
+      jailbroken = true;
+      developerMode = true;
+    }
+
+    if (!mounted) return;
+
+    setState(() {
+      _jailbroken = jailbroken;
+      _developerMode = developerMode;
+    });
+
+    if (_jailbroken || _developerMode) exit(77);
+  }
+
   @override
   void initState() {
     super.initState();
+    initPlatformStateJailBreak();
     SharedPref.init();
 
     setState(() {
