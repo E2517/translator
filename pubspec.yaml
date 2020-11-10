@@ -19,6 +19,7 @@ dependencies:
   mapbox_gl:
   sqflite:
   path_provider:
+  flutter_jailbreak_detection:
 
 dev_dependencies:
   flutter_test:
