@@ -2,7 +2,7 @@
 
 A Flutter mobile app to emulate iOS Translator with Routes, Singleton pattern, Bloc pattern, Push Notifications (Firebase), Shared Preferences, SQLite Relational Database, ChangeNotifier to manage the state, Maps, Security, and CI/CD with GitHub Actions.
 
-## SCRUM/AGILE
+## Scrum/Agile
 
 ![agile][]
 
@@ -114,7 +114,7 @@ jobs:
 
 ![branches][]
 
-# Security
+## Security
 
 ```
 *SECURITY* (check out security branch on this project)
