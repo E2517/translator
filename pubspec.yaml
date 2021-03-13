@@ -14,7 +14,7 @@ dependencies:
 
   cupertino_icons:
   shared_preferences:
-  firebase_messaging:
+  firebase_messaging: ^7.0.3
   provider:
   mapbox_gl:
   sqflite:
