@@ -31,7 +31,9 @@ jobs:
       - name: Upgrade Flutter
         run: flutter pub upgrade
       - name: Install dependencies
-        run: flutter pub get        
+        run: flutter pub get  
+      - name: Flutter test
+        run: flutter test
       - name: Flutter build
         run: flutter build apk
       - name: Create a Release APK
