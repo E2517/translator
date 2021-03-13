@@ -1,4 +1,4 @@
-name: Flutter Test & Deploy
+name: Flutter Test & Deploy (master)
 
 on:
   schedule:
@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
       - name: Flutter test
-        
+        run: flutter test
       - name: Flutter build
         run: flutter build apk
       - name: Create a Release APK
