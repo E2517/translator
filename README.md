@@ -159,3 +159,4 @@ Go to MabBox to generate the TOKEN and Create a folder inside of assets with the
 [agile]: https://github.com/E2517/images/blob/main/images/translator/agile.png
 
 - Upgrade the minimum SDK Version to 20 in Android and iOS to use MapBox
+- Upgrade push notifications to the new version 
