@@ -19,7 +19,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
@@ -33,10 +33,12 @@ jobs:
         run: flutter pub get  
       - name: Flutter test
         run: flutter test
-      - name: Flutter build
+      - name: Flutter build Android
         run: flutter build apk
+      - name: Flutter build iOS
+        run: flutter build ios --release --no-codesign
       - name: Create a Release APK
         uses: actions/upload-artifact@v2
         with:
           name: Files APK Generated
-          path: "build/app/outputs/apk/release/*.apk"
+          path: "build/app/outputs/apk/release/*.apk,build/ios/iphoneos/app.ipa"
