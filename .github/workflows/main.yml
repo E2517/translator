@@ -33,7 +33,7 @@ jobs:
         run: flutter pub get  
       - name: Flutter test
         run: flutter test
-      - name: Flutter build
+      - name: Flutter build Android
         run: flutter build apk
       - name: Create a Release APK
         uses: actions/upload-artifact@v2
