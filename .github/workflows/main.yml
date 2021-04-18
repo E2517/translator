@@ -1,4 +1,4 @@
-name: Flutter Test & Deploy (security)
+name: Flutter Test & Deploy (main)
 
 on:
   schedule:
@@ -27,11 +27,9 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
-          channel: "stable"
-      - name: Upgrade Flutter
-        run: flutter pub upgrade
+          flutter-version: '1.22.4'
       - name: Install dependencies
-        run: flutter pub get
+        run: flutter pub get  
       - name: Flutter test
         run: flutter test
       - name: Flutter build
