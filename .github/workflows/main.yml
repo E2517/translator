@@ -36,7 +36,14 @@ jobs:
       - name: Flutter build Android
         run: flutter build apk
       - name: Flutter build iOS
-        run: flutter build ios --release --no-codesign
+        run: |
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cd Payload
+          ln -s ../Runner.app
+          cd ..
+          zip -r app.ipa Payload
       - name: Create a Release APK
         uses: actions/upload-artifact@v2
         with:
