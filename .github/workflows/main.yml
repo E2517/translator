@@ -31,7 +31,7 @@ jobs:
       - name: Upgrade Flutter
         run: flutter upgrade
       - name: Downgrade Flutter
-        run: git checkout 1.22.6
+        run: git checkout v1.22.6
       - name: Install dependencies
         run: flutter pub get  
       - name: Flutter test
