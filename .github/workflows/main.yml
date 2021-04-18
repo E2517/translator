@@ -35,17 +35,8 @@ jobs:
         run: flutter test
       - name: Flutter build Android
         run: flutter build apk
-      - name: Flutter build iOS
-        run: |
-          flutter build ios --release --no-codesign
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
       - name: Create a Release APK
         uses: actions/upload-artifact@v2
         with:
           name: Files APK Generated
-          path: "build/app/outputs/apk/release/*.apk,build/ios/iphoneos/app.ipa"
+          path: "build/app/outputs/apk/release/*"
