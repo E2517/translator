@@ -1,4 +1,4 @@
-name: Flutter Test & Deploy (main)
+name: Flutter Test (main)
 
 on:
   schedule:
