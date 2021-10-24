@@ -14,16 +14,14 @@ buildscript {
 }
 
 allprojects {
-  repositories {
-    google()
-    mavenCentral()
-  }
-
-  tasks.withType(JavaCompile).configureEach {
-    javaCompiler = javaToolchains.compilerFor {
-      languageVersion = JavaLanguageVersion.of(8)
+    repositories {
+        google()
+        jcenter()
     }
-  }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:-options' 
 }
 
 rootProject.buildDir = '../build'
